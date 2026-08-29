@@ -8,15 +8,15 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --verde: #2ECC71;
-    --verde-oscuro: #1a8a4a;
+    --terracota: #E07B54;
+    --terracota-oscuro: #c96a45;
     --fondo: #0A0F0D;
     --fondo2: #111811;
     --fondo3: #162016;
     --texto: #E8F5E9;
     --texto2: #90A890;
-    --borde: rgba(46, 204, 113, 0.18);
-    --borde2: rgba(46, 204, 113, 0.35);
+    --borde: rgba(224, 123, 84, 0.18);
+    --borde2: rgba(224, 123, 84, 0.35);
   }
 
   html { scroll-behavior: smooth; }
@@ -47,7 +47,7 @@
   .nav-logo-text {
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--verde);
+    color: var(--terracota);
     letter-spacing: 0.04em;
   }
   .nav-links { display: flex; gap: 1.8rem; list-style: none; }
@@ -59,7 +59,7 @@
     text-transform: uppercase;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--verde); }
+  .nav-links a:hover { color: var(--terracota); }
 
   /* HERO */
   .hero {
@@ -70,13 +70,29 @@
     padding: 6rem 2rem 4rem;
     max-width: 860px;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-pattern {
+    position: absolute;
+    top: -80px;
+    right: -120px;
+    width: 480px;
+    height: 480px;
+    opacity: 0.14;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-logo, .hero-tag, .hero h1, .hero-desc, .hero-btns, .hero-scroll {
+    position: relative;
+    z-index: 1;
   }
   .hero-logo { width: 76px; height: auto; margin-bottom: 1.6rem; }
   .hero-tag {
     font-size: 0.8rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--verde);
+    color: var(--terracota);
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
@@ -87,7 +103,7 @@
     display: inline-block;
     width: 28px;
     height: 2px;
-    background: var(--verde);
+    background: var(--terracota);
   }
   .hero h1 {
     font-size: clamp(2.4rem, 7vw, 4.5rem);
@@ -96,7 +112,7 @@
     letter-spacing: -0.02em;
     margin-bottom: 1.5rem;
   }
-  .hero h1 span { color: var(--verde); }
+  .hero h1 span { color: var(--terracota); }
   .hero-desc {
     font-size: 1.1rem;
     color: var(--texto2);
@@ -117,16 +133,16 @@
     border: none;
   }
   .btn-primary {
-    background: var(--verde);
+    background: var(--terracota);
     color: #0A0F0D;
   }
-  .btn-primary:hover { background: #27ae60; transform: translateY(-1px); }
+  .btn-primary:hover { background: var(--terracota-oscuro); transform: translateY(-1px); }
   .btn-outline {
     background: transparent;
-    color: var(--verde);
+    color: var(--terracota);
     border: 1.5px solid var(--borde2);
   }
-  .btn-outline:hover { border-color: var(--verde); background: rgba(46,204,113,0.07); }
+  .btn-outline:hover { border-color: var(--terracota); background: rgba(224,123,84,0.07); }
 
   .club-chip {
     display: inline-flex;
@@ -176,7 +192,7 @@
     font-size: 0.75rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--verde);
+    color: var(--terracota);
     margin-bottom: 0.6rem;
   }
   .section-title {
@@ -187,7 +203,7 @@
   }
   .section-sep {
     width: 40px; height: 3px;
-    background: var(--verde);
+    background: var(--terracota);
     border-radius: 2px;
     margin-bottom: 3rem;
   }
@@ -220,7 +236,7 @@
   .stat-num {
     font-size: 2rem;
     font-weight: 800;
-    color: var(--verde);
+    color: var(--terracota);
     line-height: 1;
     margin-bottom: 0.3rem;
   }
@@ -251,7 +267,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: var(--verde);
+    background: var(--terracota);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s;
@@ -264,7 +280,7 @@
 
   .project-icon {
     width: 48px; height: 48px;
-    background: rgba(46,204,113,0.1);
+    background: rgba(224,123,84,0.1);
     border: 1px solid var(--borde);
     border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
@@ -281,7 +297,7 @@
     margin-bottom: 1rem;
     font-weight: 600;
   }
-  .status-active { background: rgba(46,204,113,0.12); color: var(--verde); border: 1px solid rgba(46,204,113,0.25); }
+  .status-active { background: rgba(224,123,84,0.12); color: var(--terracota); border: 1px solid rgba(224,123,84,0.25); }
   .status-dev { background: rgba(52,152,219,0.12); color: #5dade2; border: 1px solid rgba(52,152,219,0.25); }
   .status-next { background: rgba(243,156,18,0.1); color: #f0b429; border: 1px solid rgba(243,156,18,0.2); }
 
@@ -300,7 +316,7 @@
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .tag {
     font-size: 0.72rem;
-    background: rgba(46,204,113,0.06);
+    background: rgba(224,123,84,0.06);
     color: var(--texto2);
     border: 1px solid var(--borde);
     border-radius: 4px;
@@ -350,7 +366,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    color: var(--verde);
+    color: var(--terracota);
     font-size: 1.1rem;
     font-weight: 600;
     text-decoration: none;
@@ -367,7 +383,7 @@
     color: var(--texto2);
     font-size: 0.8rem;
   }
-  footer span { color: var(--verde); }
+  footer span { color: var(--terracota); }
 
   /* MOBILE */
   @media (max-width: 640px) {
@@ -398,6 +414,17 @@
 
   <!-- HERO -->
   <div class="hero">
+    <svg class="hero-pattern" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="240" cy="240" r="220" fill="none" stroke="#E07B54" stroke-width="1"/>
+      <circle cx="240" cy="240" r="170" fill="none" stroke="#E07B54" stroke-width="1"/>
+      <circle cx="240" cy="240" r="120" fill="none" stroke="#E07B54" stroke-width="1"/>
+      <circle cx="240" cy="240" r="70" fill="none" stroke="#E07B54" stroke-width="1"/>
+      <circle cx="240" cy="240" r="20" fill="none" stroke="#E07B54" stroke-width="1"/>
+      <line x1="240" y1="10" x2="240" y2="470" stroke="#E07B54" stroke-width="1"/>
+      <line x1="10" y1="240" x2="470" y2="240" stroke="#E07B54" stroke-width="1"/>
+      <line x1="76" y1="76" x2="404" y2="404" stroke="#E07B54" stroke-width="1"/>
+      <line x1="76" y1="404" x2="404" y2="76" stroke="#E07B54" stroke-width="1"/>
+    </svg>
     <img src="logo.png" alt="AlannaSoft" class="hero-logo">
     <p class="hero-tag">Arroyos Esteros, Paraguay</p>
     <h1>
