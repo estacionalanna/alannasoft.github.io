@@ -42,12 +42,13 @@
     align-items: center;
     z-index: 100;
   }
-  .nav-logo {
+  .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .nav-logo img { width: 26px; height: 26px; }
+  .nav-logo-text {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--verde);
     letter-spacing: 0.04em;
-    text-decoration: none;
   }
   .nav-links { display: flex; gap: 1.8rem; list-style: none; }
   .nav-links a {
@@ -70,6 +71,7 @@
     max-width: 860px;
     margin: 0 auto;
   }
+  .hero-logo { width: 76px; height: auto; margin-bottom: 1.6rem; }
   .hero-tag {
     font-size: 0.8rem;
     letter-spacing: 0.15em;
@@ -99,10 +101,10 @@
     font-size: 1.1rem;
     color: var(--texto2);
     max-width: 560px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     line-height: 1.8;
   }
-  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
   .btn {
     padding: 0.75rem 1.6rem;
     border-radius: 6px;
@@ -126,8 +128,31 @@
   }
   .btn-outline:hover { border-color: var(--verde); background: rgba(46,204,113,0.07); }
 
+  .club-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--fondo3);
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    padding: 6px 14px;
+  }
+  .club-flag {
+    width: 18px; height: 12px;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--borde2);
+  }
+  .club-flag div { flex: 1; }
+  .club-flag div:nth-child(1) { background: #fff; }
+  .club-flag div:nth-child(2) { background: #000; }
+  .club-flag div:nth-child(3) { background: #fff; }
+  .club-chip span { font-size: 0.78rem; color: var(--texto2); }
+
   .hero-scroll {
-    margin-top: 4rem;
+    margin-top: 3rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -312,10 +337,14 @@
   }
   .contact-box p {
     color: var(--texto2);
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
     max-width: 480px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .contact-box p.invite {
+    margin-bottom: 2rem;
+    color: var(--texto);
   }
   .contact-email {
     display: inline-flex;
@@ -354,7 +383,10 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">AlannaSoft</a>
+  <a class="nav-logo" href="#">
+    <img src="logo.png" alt="AlannaSoft">
+    <span class="nav-logo-text">AlannaSoft</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#proyectos">Proyectos</a></li>
     <li><a href="#stack">Stack</a></li>
@@ -366,19 +398,25 @@
 
   <!-- HERO -->
   <div class="hero">
+    <img src="logo.png" alt="AlannaSoft" class="hero-logo">
     <p class="hero-tag">Arroyos Esteros, Paraguay</p>
     <h1>
       Hola, soy<br>
       <span>José.</span><br>
-      Creo apps reales.
+      Creo apps moviles.
     </h1>
     <p class="hero-desc">
-      Desarrollador de aplicaciones móviles autodidacta apasionado por solucionar
-      problemas concretos del mundo real. De noche programo, de día opero maquinaria pesada.
+      Desarrollador autodidacta, con oficina en Arroyos Esteros. Hoy construyo
+      RogaStay, una plataforma de reservas que ya conecta turistas y anfitriones
+      reales en Paraguay.
     </p>
     <div class="hero-btns">
       <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
       <a href="#contacto" class="btn btn-outline">Contacto</a>
+      <div class="club-chip">
+        <div class="club-flag"><div></div><div></div><div></div></div>
+        <span>Hincha de Olimpia</span>
+      </div>
     </div>
     <div class="hero-scroll">
       <div class="scroll-line"></div>
@@ -389,25 +427,26 @@
   <!-- SOBRE MÍ -->
   <section id="sobre-mi">
     <p class="section-label">Sobre mí</p>
-    <h2 class="section-title">Operador de maquinaria<br>y constructor de apps</h2>
+    <h2 class="section-title">De maquinaria pesada<br>a apps para Paraguay</h2>
     <div class="section-sep"></div>
     <div class="about-grid">
       <div class="about-text">
         <p>
           A los 40 años decidí convertir mi pasión por la tecnología en algo concreto.
-          Sin estudios formales en sistemas, aprendí a programar por mi cuenta para
-          resolver problemas que veo cada día en mi trabajo y mi comunidad.
+          Sin estudios formales en sistemas, aprendí a programar por mi cuenta — de noche,
+          después de mis jornadas operando maquinaria pesada — para resolver problemas
+          que veo cada día en mi comunidad.
         </p>
         <p>
-          Trabajo con React Native, Flutter y Firebase para construir aplicaciones
-          móviles enfocadas en el mercado paraguayo. Cada proyecto nace de una
-          necesidad real.
+          Hoy trabajo con React Native, Flutter y Firebase, construyendo aplicaciones
+          móviles enfocadas 100% en el mercado paraguayo. RogaStay, mi primer proyecto
+          real, ya conecta anfitriones y turistas en el interior del país.
         </p>
       </div>
       <div class="about-stats">
         <div class="stat-card">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Apps en desarrollo</div>
+          <div class="stat-num">2</div>
+          <div class="stat-label">Apps en produccion</div>
         </div>
         <div class="stat-card">
           <div class="stat-num">PY</div>
@@ -433,13 +472,30 @@
     <div class="projects-grid">
 
       <div class="project-card">
+        <div class="project-icon">🏡</div>
+        <div class="project-status status-active">En produccion</div>
+        <div class="project-name">RogaStay</div>
+        <p class="project-desc">
+          Plataforma de reservas de alojamiento para cabañas, quintas y hospedajes
+          en Paraguay. Conecta propietarios (Rogajára) con turistas de forma simple
+          y accesible — ya en uso por establecimientos reales.
+        </p>
+        <div class="project-tags">
+          <span class="tag">React Native</span>
+          <span class="tag">Expo</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">Mobile</span>
+        </div>
+      </div>
+
+      <div class="project-card">
         <div class="project-icon">☕</div>
-        <div class="project-status status-active">Activo</div>
+        <div class="project-status status-active">En produccion</div>
         <div class="project-name">Estación Alanna Café</div>
         <p class="project-desc">
-          Sistema de gestión para cafeterías y negocios locales. Módulos de ventas,
-          productos, caja registradora y reportes. Con potencial de escalar como
-          SaaS multi-tenant para PyMEs paraguayas.
+          Sistema de gestión para mi propia cafetería. Módulos de ventas, productos,
+          caja registradora y reportes, en uso diario en Estación Alanna. Con
+          potencial de escalar como SaaS para otras PyMEs paraguayas.
         </p>
         <div class="project-tags">
           <span class="tag">Firebase</span>
@@ -451,35 +507,18 @@
 
       <div class="project-card">
         <div class="project-icon">🚜</div>
-        <div class="project-status status-dev">En desarrollo</div>
+        <div class="project-status status-next">Idea futura</div>
         <div class="project-name">CHEMAQUINA</div>
         <p class="project-desc">
-          App B2B de gestión de maquinaria agrícola. Control de combustible,
-          entregas y operadores. Nació de mi propia experiencia como operador de
-          excavadoras, cosechadoras y tractores.
+          Idea para una app B2B de gestión de maquinaria agrícola. Control de
+          combustible, entregas y operadores. Nace de mi propia experiencia como
+          operador de excavadoras, cosechadoras y tractores.
         </p>
         <div class="project-tags">
           <span class="tag">FlutterFlow</span>
           <span class="tag">Flutter</span>
           <span class="tag">Firebase</span>
           <span class="tag">B2B</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">🏡</div>
-        <div class="project-status status-dev">En desarrollo</div>
-        <div class="project-name">RogaStay</div>
-        <p class="project-desc">
-          Plataforma de reservas de alojamiento para cabañas, quintas y hospedajes
-          en Paraguay. Conecta propietarios con turistas locales de forma simple
-          y accesible.
-        </p>
-        <div class="project-tags">
-          <span class="tag">React Native</span>
-          <span class="tag">Expo</span>
-          <span class="tag">Firebase</span>
-          <span class="tag">Mobile</span>
         </div>
       </div>
 
@@ -513,6 +552,11 @@
         Estoy abierto a colaboraciones, consultas sobre mis proyectos
         o simplemente charlar sobre ideas de apps para Paraguay.
       </p>
+      <p class="invite">
+        ¿Tenés una idea, un problema real que resolver, o una necesidad para tu
+        negocio? Escribime — no hace falta que sea un proyecto grande, a veces
+        las mejores apps nacen de un problema chico bien resuelto.
+      </p>
       <div>
         <a href="mailto:alannasoft.py@gmail.com" class="contact-email">
           ✉️ alannasoft.py@gmail.com
@@ -525,7 +569,7 @@
 </main>
 
 <footer>
-  <p>Hecho con 💚 desde <span>Arroyos Esteros, Paraguay</span> · AlannaSoft · 2025</p>
+  <p>Hecho con 💚 desde <span>Arroyos Esteros, Paraguay</span> · AlannaSoft · 2026</p>
 </footer>
 
 </body>
